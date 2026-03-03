@@ -118,7 +118,7 @@ This system requires a specific two-folder structure on your `C:` drive to funct
     6.  **Apply:** Check "Replace all child object permission entries..." and click Apply.
 
     **4.4 Configuring Folder Roles (ChatOps)**
-    Now that the baseline is set (QDRIVE = Read Only, QDRIVEADMIN = Read + Write), you can use the Discord Bot to strictly enforce specific folder behaviors.
+    Now that the baseline is set for user permissions (QDRIVE = Read Only, QDRIVEADMIN = Read + Write), you can use the Discord Bot to strictly enforce specific folder behaviors.
 
     **Example 1: The Private Vault (`QDRIVEADMINUPLOAD`)**
     *Goal:* Only admins can enter this folder. The non-admin users cannot access it at all.
