@@ -10,7 +10,7 @@ A robust, hybrid Python/PowerShell engine designed to manage high-security, rota
 The QDRIVE environment is engineered to handle dynamic network conditions, specifically targeting environments utilizing VPN port-forwarding (Proton VPN in this case). It utilizes a custom **"Handshake Protocol"** between a Python interface and a PowerShell watchdog to ensure near 100% uptime and automatic port synchronization across firewall rules, SSH configurations, and discord reporting.
 
 ### **Key Features**
-* **Watchdog Protocol**: Automated regex-based log parsing that monitors VPN logs for new port assignments and updates both the `sshd_config` and Windows Firewall in real-time.
+* **Watchdog Protocol**: Automated regex-based log parsing that monitors VPN logs for new port assignments and updates both the `sshd_config`, and Windows Firewall in real-time.
 * **SRE Self-Healing**: A bidirectional heartbeat loop; the Port Watcher monitors the bot's health timestamp and programmatically kills/restarts the process if a hang or crash is detected.
 * **ChatOps Management**: A full Discord command tree for remote server administration, including IP/Port reporting, storage health, and security whitelisting.
 * **QLOCK Protocol**: A surgical maintenance function that terminates specific file handles on the storage array to allow for clean log rotation and system refreshes without reboots.
