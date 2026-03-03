@@ -121,7 +121,7 @@ This system requires a specific two-folder structure on your `C:` drive to funct
     Now that the baseline is set for user permissions (QDRIVE = Read Only, QDRIVEADMIN = Read + Write), you can use the Discord Bot to strictly enforce specific folder behaviors.
 
     **Example 1: The Private Vault (`QDRIVEADMINUPLOAD`)**
-    *Goal:* Only admins can enter this folder. The non-admin users cannot access it at all.
+    *Goal:* Only admins can enter this folder. Non-admin users cannot access it at all.
     1.  Create the folder: `C:\QDRIVE\QDRIVEADMINUPLOAD`.
     2.  **Go to Discord** and run:
         `/qdeny foldername:QDRIVEADMINUPLOAD`
