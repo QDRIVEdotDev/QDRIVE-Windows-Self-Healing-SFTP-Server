@@ -1,9 +1,25 @@
-# QDRIVE: Self-Healing Secure SFTP Infrastructure
+# **QDRIVE**: Self-Healing Secure SFTP Infrastructure
 
 > **Build your own Cloud.**
 > **A fully autonomous, self-healing SFTP infrastructure designed for dynamic network environments.**
 
 A robust, hybrid Python/PowerShell engine designed to manage high-security, rotating-port SFTP servers. It bridges the gap between complex VPN networking and accessible file storage using autonomous "Self-Healing" capabilities and Discord-based ChatOps.
+
+---
+
+### **State of the QDRIVE**
+
+This is the original Windows implementation of the **QDRIVE** (v1.0.x), maintained as the reference for Windows-native SFTP deployments using PowerShell, Task Scheduler, and `icacls`.
+
+**A ground-up Linux rewrite is available as [QDRIVE Linux v2.0](https://github.com/QDRIVEdotDev/QDRIVE)** — featuring systemd service architecture, kernel-enforced chroot, scoped sudoers, validated config rollback with automatic restoration, and a full test suite of 306 automated tests. For most deployments, v2.0 is the recommended version.
+
+**Which version is right for you:**
+
+* **Windows environments (this repo):** Use v1.0 if you need native Windows integration. OpenSSH for Windows, local non-administrator Windows user accounts, NTFS `icacls` permissions, Task Scheduler.
+* **Linux environments:** Use v2.0 — architecturally newer, security-hardened with systemd sandboxing, with automated testing and full audit infrastructure. Runs on Debian-based Linux (Raspberry Pi OS Lite, Ubuntu 22.04+).
+
+Both versions implement the same core concept. A self-healing SFTP service maintained via Watchdog (VPN port syncing), Discord bot based ChatOps (remote management), a security audit trail for peace of mind, and automated weekly maintenance. All while still being configurable to match the needs of users who operate a wide variety of storage devices, operating systems, and VPN providers.
+
 ---
 
 ### **Project Overview**
@@ -179,4 +195,12 @@ QDRIVE/
     ├── sshd_config.example
     └── QDRIVE-TaskScheduler-Setup.md
 ```
+---
+
+### **Related Projects**
+
+* **[QDRIVE Linux v2.0](https://github.com/QDRIVEdotDev/QDRIVE)** — The Linux-native QDRIVE. Systemd services, kernel-enforced chroot, scoped sudoers, 306 automated tests. Ideal for deploying the QDRIVE to environments that utilize Linux environments (Raspberry Pi's, edge node mini PC's, that kinda stuff).
+
+---
+
 Disclaimer: Project QDRIVE is an independent open-source automation tool developed by QDRIVEdotDev and is not affiliated with any third-party vendors, official systems, or commercial entities.
