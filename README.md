@@ -11,7 +11,7 @@ A robust, hybrid Python/PowerShell engine designed to manage high-security, rota
 
 ### **State of the QDRIVE**
 
-This is the original Windows implementation of the **QDRIVE** (v1.0.x), maintained as the reference for Windows-native SFTP deployments using PowerShell, Task Scheduler, and `icacls`. The Windows version of QDRIVE is recommended to users who cannot deploy the Linux rebuild.
+This is the original Windows implementation of the **QDRIVE** (v1.0.x), maintained as the reference for Windows-native SFTP deployments using PowerShell, Task Scheduler, and `icacls`.
 
 **A ground-up Linux rewrite is available as [QDRIVE Linux v2.0](https://github.com/QDRIVEdotDev/QDRIVE)**. Featuring systemd service architecture, kernel-enforced chroot, scoped sudoers, validated config rollback with automatic restoration, and a full test suite of 306 automated tests. For most deployments, the Linux version is the recommended version.
 
