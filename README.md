@@ -8,11 +8,12 @@ A robust, hybrid Python/PowerShell engine designed to manage high-security, rota
 
 ---
 
+
 ### **State of the QDRIVE**
 
-This is the original Windows implementation of the **QDRIVE** (v1.0.x), maintained as the reference for Windows-native SFTP deployments using PowerShell, Task Scheduler, and `icacls`.
+This is the original Windows implementation of the **QDRIVE** (v1.0.x), maintained as the reference for Windows-native SFTP deployments using PowerShell, Task Scheduler, and `icacls`. The Windows version of QDRIVE is recommended to users who cannot deploy the Linux rebuild.
 
-**A ground-up Linux rewrite is available as [QDRIVE Linux v2.0](https://github.com/QDRIVEdotDev/QDRIVE)** — featuring systemd service architecture, kernel-enforced chroot, scoped sudoers, validated config rollback with automatic restoration, and a full test suite of 306 automated tests. For most deployments, v2.0 is the recommended version.
+**A ground-up Linux rewrite is available as [QDRIVE Linux v2.0](https://github.com/QDRIVEdotDev/QDRIVE)**. Featuring systemd service architecture, kernel-enforced chroot, scoped sudoers, validated config rollback with automatic restoration, and a full test suite of 306 automated tests. For most deployments, the Linux version is the recommended version.
 
 **Which version is right for you:**
 
@@ -21,7 +22,9 @@ This is the original Windows implementation of the **QDRIVE** (v1.0.x), maintain
 
 Both versions implement the same core concept. A self-healing SFTP service maintained via Watchdog (VPN port syncing), Discord bot based ChatOps (remote management), a security audit trail for peace of mind, and automated weekly maintenance. All while still being configurable to match the needs of users who operate a wide variety of storage devices, operating systems, and VPN providers.
 
+
 ---
+
 
 ### **Project Overview**
 The QDRIVE environment is engineered to handle dynamic network conditions, specifically targeting environments utilizing VPN port-forwarding (Proton VPN in this case). It utilizes a custom **"Handshake Protocol"** between a Python interface and a PowerShell watchdog to ensure near 100% uptime and automatic port synchronization across firewall rules, SSH configurations, and discord reporting.
@@ -33,7 +36,9 @@ The QDRIVE environment is engineered to handle dynamic network conditions, speci
 * **QLOCK Protocol**: A surgical maintenance function that terminates specific file handles on the storage array to allow for clean log rotation and system refreshes without reboots.
 * **RBAC File Security**: Discord commands to immediately deny or restore user access to specific folders on the storage array using native Windows `icacls`.
 
+
 ---
+
 
 ### **Technical Architecture**
 
@@ -44,7 +49,9 @@ The QDRIVE environment is engineered to handle dynamic network conditions, speci
 #### **The Storage Portal**
 The system utilizes a specialized mount point at `C:\QDRIVE\Drive-Portal` to bridge Internal and External SSDs while supporting OpenSSH `ChrootDirectory` requirements. This prevents mounting conflicts and ensures user permission integrity.
 
+
 ---
+
 
 ### **Core Documentation**
 For a deep dive into specific system components, refer to the following technical manuals:
@@ -55,7 +62,9 @@ For a deep dive into specific system components, refer to the following technica
 * **[Client Connection Guide](docs/CONNECTION.md)**: Step-by-step instructions for whitelisting and WinSCP connectivity.
 * **[Lore & Banner Protocol](docs/LOREBANNER.md)**: The narrative behind the "Mind Prison" and its use as a server-identity signature.
 
+
 ---
+
 
 ### **Installation & Deployment**
 
@@ -160,7 +169,9 @@ This system requires a specific two-folder structure on your `C:` drive to funct
     * Create the mandatory Scheduled Tasks as outlined in `docs/QDRIVE-TaskScheduler-Setup.md`.
     * Launch `src\watchdog\Sync-ProtonPort.ps1` to begin the initial port synchronization and bot wake-up sequence.
 
+
 ---
+
 
 ### **Discord Command Tree**
 * **`/qdrive`**: Reports current external IP and active SSH Port.
@@ -173,7 +184,9 @@ This system requires a specific two-folder structure on your `C:` drive to funct
 * **`/qlock`**: Emergency lockout; terminates file locks, kills the Watchdog, and stops the SSH service.
 * **`/qrestart`**: Triggers the full Weekly Maintenance routine and issues a system reboot.
 
+
 ---
+
 
 ### **Repository Structure**
 ```text
@@ -196,12 +209,17 @@ QDRIVE/
     ├── sshd_config.example
     └── QDRIVE-TaskScheduler-Setup.md
 ```
+
+
 ---
+
 
 ### **Related Projects**
 
 * **[QDRIVE Linux v2.0](https://github.com/QDRIVEdotDev/QDRIVE)** — The Linux-native QDRIVE. Systemd services, kernel-enforced chroot, scoped sudoers, 306 automated tests. Ideal for deploying the QDRIVE to environments that utilize Linux environments (Raspberry Pi's, edge node mini PC's, that kinda stuff).
 
+
 ---
+
 
 Disclaimer: Project QDRIVE is an independent open-source automation tool developed by QDRIVEdotDev and is not affiliated with any third-party vendors, official systems, or commercial entities.
